@@ -13,10 +13,10 @@ public class Task {
     private Long id;
     private String name;
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private Status status = Status.READY;
     @Enumerated(EnumType.STRING)
     private Category category;
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
 
     public Status getStatus() {
