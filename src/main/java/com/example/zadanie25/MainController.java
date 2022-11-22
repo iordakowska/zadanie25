@@ -46,7 +46,13 @@ public class MainController {
 
     @PostMapping("/add")
     public String addTask(Task task) {
-        taskRepository.save(task);
-        return "redicect:/";
+        if(task.getName() != null) {
+            taskRepository.save(task);
+            return "redirect:/";
+        } else {
+            return "error";
+        }
+
+
     }
 }
