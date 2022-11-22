@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dodaj</title>
+    <div th:replace="fragments :: css-style"></div>
+</head>
+<body>
+<div th:replace="fragments :: header"></div>
+
+<form style="width: 100%; max-width: 1000px; margin: auto" action="/add" method="post" th:object="${taskToAdd}">
+    <div class="mb-3">
+        <label class="form-label">Nazwa czynności</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+    <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+        <option selected>Status</option>
+        <option value=>Do wykonania</option>
+        <option value="2">Zrobione</option>
+    </select>
+    <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+        <option selected>Kategoria</option>
+        <option value="0">Domowe</option>
+        <option value="1">Praca</option>
+        <option value="2">Rozrywka</option>
+    </select>
+
+
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>
+
+<div style th:replace="fragments :: footer"></div>
+</body>
+</html>
