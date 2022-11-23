@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>dodaj</title>
+    <div th:replace="fragments :: css-style"></div>
+</head>
+<body>
+<div th:replace="fragments :: header"></div>
+
+<form style="width: 100%; max-width: 1000px; margin: auto" action="/add" method="post" th:object="${taskToAdd}">
+    <div class="mb-3">
+        <label class="form-label">Nazwa czynności</label>
+        <textarea th:field="*{name}" class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+    <div class="mb-3">
+        <select th:field="*{category}" class="form-select" aria-label="Default select example">
+            <label class="form-label">Kategoria</label>
+            <option value="HOUSEWORK">Domowe</option>
+            <option value="JOB">Praca</option>
+            <option value="HOBBY">Rozrywka</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="endTime"  class="form-label">Data zakończenia zadania</label>
+        <input type="date" class="form-label" id="endTime" th:field="*{date}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>
+
+<div style th:replace="fragments :: footer"></div>
+</body>
+</html>

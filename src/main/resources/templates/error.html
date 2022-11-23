@@ -1,0 +1,24 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>error</title>
+
+  <div th:replace="fragments :: css-style"></div>
+</head>
+<body>
+<div th:replace="fragments :: header"></div>
+<h4 style= "text-align: center">Błąd podczas dodawania zadania</h4>
+<div style="width: 100%; max-width: 1000px; margin: auto">
+  <ul class="list-group">
+    <li class="list-group-item" th:each="t: ${tasks}">
+      <span th:text="${t.date}"><br></span>
+      <span th:text="${t.name}"></span>
+    </li>
+  </ul>
+</div>
+<br>
+
+<div th:replace="fragments :: footer"></div>
+
+</body>
+</html>
